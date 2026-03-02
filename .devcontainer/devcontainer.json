@@ -6,6 +6,8 @@
         "memory": "8gb",
         "storage": "32gb"
     },
+    "forwardPorts": [6080],
+    "postStartCommand": "vncserver :1 -geometry 1280x800 -depth 24 && novnc --vnc localhost:5901 --listen 6080 &",
     "remoteUser": "user",
     "postCreateCommand": "echo 'Welcome to Cal Poly ECE4203 2026'",
     "customizations": {
@@ -14,6 +16,9 @@
                 "mshr-h.veriloghdl",
                 "leafvmaple.verilog-formatter"
             ]
+        },
+        "codespaces": {
+            "idleTimeoutMinutes": 15
         }
     }
 }
